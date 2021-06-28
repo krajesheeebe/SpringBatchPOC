@@ -1,16 +1,16 @@
 create table accountdetails(
 	id int NOT NULL AUTO_INCREMENT,
-    ccIDInd varchar(45),
-    ccID varchar(45),
-    clusterType varchar(45),
-    clusterID varchar(45),
-    lob varchar(45),
-    projectedSegment varchar(45),
-    relationshipID varchar(45),
-    relationshipEOMAvg varchar(45),
-    balance varchar(45),
-    compID varchar(45),
-    acctClosedDate varchar(45),
+    CCID_Ind varchar(45),
+    CCID varchar(45),
+    Cluster_Type varchar(45),
+    Cluster_ID varchar(45),
+    LOB varchar(45),
+    Projected_Segment varchar(45),
+    Relationship_ID varchar(45),
+    Relationship_EOM_Avg varchar(45),
+    Balance varchar(45),
+    Comp_ID varchar(45),
+    Acct_Closed_Date varchar(45),
     PRIMARY KEY (id)
 );
 	

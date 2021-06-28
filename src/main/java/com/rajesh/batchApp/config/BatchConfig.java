@@ -87,7 +87,7 @@ public class BatchConfig {
     @Bean
     @StepScope
     FlatFileItemReader<AccountDetails> csvFileReader(@Value("#{jobParameters['filename']}") String filename) {
-        String[] properties = new String[] {"movieId", "tagId", "relevance"};
+        String[] properties = new String[] {"ccIDInd","ccID","clusterType","clusterID","lob","projectedSegment","relationshipID","relationshipEOMAvg","balance","compID","acctClosedDate"};
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
         lineTokenizer.setDelimiter(",");
         lineTokenizer.setIncludedFields(IntStream.range(0, properties.length).toArray());
@@ -122,8 +122,8 @@ public class BatchConfig {
     @Bean
     @StepScope
     JdbcBatchItemWriter<AccountDetails> csvDataBatchWriter(@Value("#{jobParameters['tableName']}") String tableName) {
-        String[] columns = {"movie_id", "tag_id", "relevance"};
-        String[] properties = {"movieId", "tagId", "relevance"};
+        String[] columns = {"CCID_Ind","CCID","Cluster_Type","Cluster_ID","LOB","Projected_Segment","Relationship_ID","Relationship_EOM_Avg","Balance","Comp_ID","Acct_Closed_Date"};
+        String[] properties = {"ccIDInd","ccID","clusterType","clusterID","lob","projectedSegment","relationshipID","relationshipEOMAvg","balance","compID","acctClosedDate"};
         return new JdbcBatchItemWriterBuilder<AccountDetails>()
                 .beanMapped()
                 .sql(buildInsertSql(tableName, columns, properties))
