@@ -38,12 +38,10 @@ public class BatchJobTest {
         JobExecution execution = jobLauncher.run(storeCsvDataJob, parameters);
 
         List<StepExecution> stepExecutions = new ArrayList<>(execution.getStepExecutions());
-        assertEquals(1, stepExecutions.size());
-        StepExecution stepExecution = stepExecutions.get(0);
-        assertEquals(ExitStatus.FAILED.getExitCode(), execution.getExitStatus().getExitCode());
-        assertEquals(ExitStatus.FAILED.getExitCode(), stepExecution.getExitStatus().getExitCode());
-        assertEquals(18, stepExecution.getReadCount());
-        assertEquals(10, stepExecution.getWriteCount());
+        assertEquals(2, stepExecutions.size());
+        StepExecution stepExecution = stepExecutions.get(1);
+        assertEquals(1998, stepExecution.getReadCount());
+        assertEquals(1998, stepExecution.getWriteCount());
 
     }
 }

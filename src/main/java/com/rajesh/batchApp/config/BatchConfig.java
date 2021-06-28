@@ -3,6 +3,7 @@ package com.rajesh.batchApp.config;
 import java.beans.PropertyEditor;
 import java.beans.PropertyEditorSupport;
 import java.sql.SQLException;
+import java.sql.SQLNonTransientConnectionException;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashMap;
